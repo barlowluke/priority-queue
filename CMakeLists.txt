@@ -7,6 +7,8 @@ project(dsac)
 
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 add_executable(dsac src/main.cpp)
 
 add_executable(my_test tests/test.cpp)

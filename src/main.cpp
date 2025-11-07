@@ -1,3 +1,4 @@
+#include <iostream>
 #include "sort_sqn.hpp"
 #include "min_merge_cost.hpp"
 
