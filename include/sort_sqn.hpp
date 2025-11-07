@@ -1,16 +1,17 @@
 #pragma once
 
 #include <vector>
-#include <math.h>
+#include <cmath>
 #include <queue>
+#include <algorithm>
 
 std::vector<int> top_sqrtN_sorted(const std::vector<int>& A) {
-   if (A.empty()) {
-       return {};
-   } 
-
     int N = A.size();
-    int k = static_cast<int>(std::ceil(std::sqrt(N)));
+    if (N == 0) {
+        return std::vector<int>();
+    }
+
+    int k = std::ceil(std::sqrt(N));
 
     std::priority_queue<int, std::vector<int>, std::greater<int>> min_heap;
 
@@ -31,6 +32,7 @@ std::vector<int> top_sqrtN_sorted(const std::vector<int>& A) {
         min_heap.pop();
     }
 
+    std::reverse(result.begin(), result.end());
     return result;
    
 }
